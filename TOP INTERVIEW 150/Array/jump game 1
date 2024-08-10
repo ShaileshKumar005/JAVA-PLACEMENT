@@ -1,0 +1,15 @@
+class Solution {
+    public boolean canJump(int[] nums) {
+        int currfar=0;
+        for(int i=0;i<nums.length-1;i++)
+        {
+            currfar=Math.max(currfar,i+nums[i]);
+            if(currfar>=nums.length-1)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+https://leetcode.com/problems/jump-game/?envType=study-plan-v2&envId=top-interview-150
