@@ -1,0 +1,28 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        HashMap<Integer,Integer> hp=new HashMap<>();
+        int ans=-1;
+        for(int a:nums)
+        {
+            if(hp.containsKey(a))
+            {
+                hp.put(a,hp.get(a)+1);
+            }
+            else
+            {
+                hp.put(a,1);
+            }
+        }
+        for(int a: hp.keySet())
+        {
+            if(hp.get(a)>(nums.length/2))
+            {
+                ans=a;
+            }
+        }
+        return ans;
+
+    }
+}
+
+https://leetcode.com/problems/majority-element/?envType=study-plan-v2&envId=top-interview-150
